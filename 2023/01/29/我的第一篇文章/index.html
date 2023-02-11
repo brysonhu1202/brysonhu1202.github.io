@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>R数据科学笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="default, include1234knitr::opts_chunk$set(echo &#x3D; TRUE)knitr::opts_chunk$set(out.width&#x3D; &quot;50%&quot;)knitr::opts_chunk$set(fig.align&#x3D;&amp;#x27;center&amp;#x27;) knitr::opts_chunk$set(warning &#x3D; FALSE)   \new">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R数据科学笔记">
+<meta property="og:url" content="http://example.com/2023/01/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="default, include1234knitr::opts_chunk$set(echo &#x3D; TRUE)knitr::opts_chunk$set(out.width&#x3D; &quot;50%&quot;)knitr::opts_chunk$set(fig.align&#x3D;&amp;#x27;center&amp;#x27;) knitr::opts_chunk$set(warning &#x3D; FALSE)   \new">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-11T09:06:16.700Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-我的第一篇文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="article-date">
+  <time class="dt-published" datetime="2023-01-28T16:00:00.000Z" itemprop="datePublished">2023-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      R数据科学笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plaintext"><figcaption><span>default, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo = TRUE)</span><br><span class="line">knitr::opts_chunk$set(out.width= &quot;50%&quot;)</span><br><span class="line">knitr::opts_chunk$set(fig.align=&#x27;center&#x27;) </span><br><span class="line">knitr::opts_chunk$set(warning = FALSE) </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>R安装：<a target="_blank" rel="noopener" href="https://www.r-project.org/">https://www.r-project.org/</a><br>R studio 安装：<a target="_blank" rel="noopener" href="https://posit.co/downloads/">https://posit.co/downloads/</a> tidyverse包安装</p>
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install.packages(&quot;tidyverse&quot;)</span><br><span class="line">update.packages(&quot;tidyverse&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">library(tidyverse)</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="基础工作流"><a href="#基础工作流" class="headerlink" title="基础工作流"></a>基础工作流</h1><p><strong>代码基础</strong> 对象名称必须以字母开头，并且只能包含字母、数字、_ 和 .<br>如果想让对象名称具有描述性，那么就应该在使用多个单词时遵循某种命名惯例<br><strong>snake_case 命名法</strong>:使用小写单词，并用 _ 分隔：<br>i_use_snake_case<br>otherPeopleUseCamelCase<br>some.people.use.periods<br>And_aFew.People_RENOUNCEconvention<br><br>引号””和括号()必须一直成对出现。如果出现不匹配，R 会显示一个**+**号<br><strong>赋值</strong>与显示赋值结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y &lt;- seq(1, 10, length.out = 5) </span><br><span class="line">y</span><br><span class="line">#简化输出结果，赋值后添加（）</span><br><span class="line">(y &lt;- seq(1, 10, length.out = 5)) </span><br></pre></td></tr></table></figure>
+
+<p><strong>函数调用</strong> <br>function_name(arg1 &#x3D; val1, arg2 &#x3D; val2, …)\</p>
+<h2 id="管道函数"><a href="#管道函数" class="headerlink" title="管道函数"></a>管道函数</h2><p>在阅读代码时，%&gt;%最好读作“然后”<br>x %&gt;% f(y) 会转换为 f(x, y)，x %&gt;% f(y) %&gt;% g(z)会转换为 g(f(x, y), z)\</p>
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 无管道函数</span><br><span class="line">by_dest &lt;- group_by(flights, dest) </span><br><span class="line">delay &lt;- summarize(by_dest, </span><br><span class="line">  count = n(), </span><br><span class="line">  dist = mean(distance, na.rm = TRUE), </span><br><span class="line">  delay = mean(arr_delay, na.rm = TRUE) </span><br><span class="line">) </span><br><span class="line">delay &lt;- filter(delay, count &gt; 20, dest != &quot;HNL&quot;) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 使用管道函数</span><br><span class="line">delays &lt;- flights %&gt;% </span><br><span class="line">  group_by(dest) %&gt;% </span><br><span class="line">  summarize( </span><br><span class="line">    count = n(), </span><br><span class="line">  dist = mean(distance, na.rm = TRUE), </span><br><span class="line">  delay = mean(arr_delay, na.rm = TRUE) </span><br><span class="line">) %&gt;% </span><br><span class="line">filter(count &gt; 20, dest != &quot;HNL&quot;)</span><br></pre></td></tr></table></figure>
+
+
+<p>\newpage</p>
+<h1 id="ggplot2进行数据可视化"><a href="#ggplot2进行数据可视化" class="headerlink" title="ggplot2进行数据可视化"></a>ggplot2进行数据可视化</h1><p>创建ggplot图形\</p>
+<ul>
+<li>必须放在一行代码的<strong>末尾</strong>，而不是开头\</li>
+</ul>
+<p><strong>条形图、直方图和频率多边形图</strong>可以对数据进行分箱，然后绘制出分箱数量和落在每个 分箱的数据点的数量。<br><strong>平滑曲线</strong>会为数据拟合一个模型，然后绘制出模型预测值。<br><strong>箱线图</strong>可以计算出数据分布的多种摘要统计量，并显示一个特殊形式的箱体。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># ggplot() 创建了一个坐标系</span><br><span class="line"># data  =  mpg导入数据</span><br><span class="line">ggplot(data = mpg) + </span><br><span class="line"># 函数 geom_point() 向图中添加一个点层，这样就可以创建一张散点图。</span><br><span class="line"># ggplot2 中的每个几何对象函数都有一个 mapping 参数。</span><br><span class="line"># 这个参数定义了如何将数据集中的变量映射为图形属性。</span><br><span class="line"># aes() 函数的 x 参数和 y参数分别指定了映射到 x 轴的变量与映射到 y 轴的变量。</span><br><span class="line">  geom_point(mapping = aes(x = displ, y = hwy)) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>warning</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 可以将分类数据标注为图形属性</span><br><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_point(mapping = aes(x = displ, y = hwy, alpha = class)) </span><br><span class="line"># 设置透明度</span><br><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_point(mapping = aes(x = displ, y = hwy, shape = class))</span><br><span class="line"># 设置形状</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_1.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_point(mapping = aes(x = displ, y = hwy)) +</span><br><span class="line"># 手动设置点形状，values为对应形状</span><br><span class="line">  scale_shape_manual(values = 19)</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="分面"><a href="#分面" class="headerlink" title="分面"></a>分面</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_point(mapping = aes(x = displ, y = hwy)) + </span><br><span class="line"># 使用函数 facet_wrap() 分面，建公式的方式是在 ~ 符号后面加一个变量名</span><br><span class="line"># nrow手动设置行数</span><br><span class="line">  facet_wrap(~ class, nrow = 2)</span><br><span class="line"></span><br><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_point(mapping = aes(x = displ, y = hwy)) + </span><br><span class="line"># 通过变量分组</span><br><span class="line">  facet_grid(drv ~ cyl)</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="平滑曲线"><a href="#平滑曲线" class="headerlink" title="平滑曲线"></a>平滑曲线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = mpg) + </span><br><span class="line"># geom_smooth() 函数可以按照不同的线型绘制出不同的曲线，</span><br><span class="line"># 每条曲线对应映射到线型的变量的一个唯一值</span><br><span class="line">  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 组合散点图与平滑曲线组合</span><br><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_point(mapping = aes(x = displ, y = hwy)) + </span><br><span class="line">  geom_smooth(mapping = aes(x = displ, y = hwy))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 上述代码的简化处理</span><br><span class="line"># ggplot2 会将这些映射作为全局映射应用到图中的每个几何对象中</span><br><span class="line">ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + </span><br><span class="line">  geom_point() + </span><br><span class="line">  geom_smooth()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 果将映射放在几何对象函数中，那么 ggplot2 会将其看作这个图层的局部映射</span><br><span class="line"># 仅对该图层有效</span><br><span class="line">ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + </span><br><span class="line">  geom_point(mapping = aes(color = class)) + </span><br><span class="line">  geom_smooth()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + </span><br><span class="line">  geom_point(mapping = aes(color = class)) + </span><br><span class="line"># 也可以不同图层使用不同数据源</span><br><span class="line">  geom_smooth( </span><br><span class="line">    data = filter(mpg, class == &quot;subcompact&quot;), </span><br><span class="line">    se = FALSE </span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="统计变换"><a href="#统计变换" class="headerlink" title="统计变换"></a>统计变换</h2><p>绘图时用来计算新数据的算法称为 stat（statistical transformation，统计变换）\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 用 geom_bar() 函数就可以绘制的基本条形图</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar(mapping = aes(x = cut))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_2.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 调整为比例</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar( </span><br><span class="line">    mapping = aes(x = cut, y = after_stat(prop), group = 1) </span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># stat_summary() 函数为 x 的每个唯一值计算 y 值的摘要统计</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  stat_summary( </span><br><span class="line">    mapping = aes(x = cut, y = depth), </span><br><span class="line">        fun.min = min, </span><br><span class="line">    fun.max = max, </span><br><span class="line">    fun = median </span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="位置调整"><a href="#位置调整" class="headerlink" title="位置调整"></a>位置调整</h2><p>以使用 color 或者 fill（这个更有用）图形属性来为条形图上色\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar(mapping = aes(x = cut, color = cut)) #边框</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar(mapping = aes(x = cut, fill = cut)) #填充</span><br></pre></td></tr></table></figure>
+
+<p>将 fill 图形属性映射到另一个变量，那么条形会自动分块堆叠起来\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar(mapping = aes(x = cut, fill = clarity))</span><br></pre></td></tr></table></figure>
+
+<p>堆叠是由 position 参数设定的位置调整功能自动完成的。可以使用以下 3 种选项之一：”identity”、”fill” 和 “dodge”\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># position  =  &quot;identity&quot; 将每个对象直接显示在图中</span><br><span class="line">ggplot( </span><br><span class="line">  data = diamonds, </span><br><span class="line">  mapping = aes(x = cut, fill = clarity) </span><br><span class="line">) + </span><br><span class="line">  geom_bar(alpha = 1/5, position = &quot;identity&quot;) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#  position  =  &quot;fill&quot; 每组堆叠条形具有同样的高度</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar( </span><br><span class="line">    mapping = aes(x = cut, fill = clarity), </span><br><span class="line">    position = &quot;fill&quot; </span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># position  =  &quot;dodge&quot; 将每组中的条形依次并列放置</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar( </span><br><span class="line">    mapping = aes(x = cut, fill = clarity), </span><br><span class="line">    position = &quot;dodge&quot; </span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<p><strong>散点图的位置调整</strong><br>散点图的点显示在一个网格上时，很多点彼此重了。这个问题称为<strong>过绘制</strong>。<br>position &#x3D; “jitter” 为每个数据点添加一个很小的随机扰动，这样就可以将重叠的点分散开来\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_point( </span><br><span class="line">    mapping = aes(x = displ, y = hwy), </span><br><span class="line">    position = &quot;jitter&quot; </span><br><span class="line">  )</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>coord_flip() 函数可以交换 x 轴和 y 轴\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + </span><br><span class="line">  geom_boxplot() </span><br><span class="line">ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + </span><br><span class="line">  geom_boxplot() + </span><br><span class="line">  coord_flip()</span><br></pre></td></tr></table></figure>
+
+<p>coord_quickmap() 函数可以为地图设置合适的纵横比。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nz &lt;- map_data(&quot;nz&quot;) </span><br><span class="line"> </span><br><span class="line">ggplot(nz, aes(long, lat, group = group)) + </span><br><span class="line">  geom_polygon(fill = &quot;white&quot;, color = &quot;black&quot;) </span><br><span class="line"> </span><br><span class="line">ggplot(nz, aes(long, lat, group = group)) + </span><br><span class="line">  geom_polygon(fill = &quot;white&quot;, color = &quot;black&quot;) + </span><br><span class="line">  coord_quickmap()</span><br></pre></td></tr></table></figure>
+
+<p>coord_polar() 函数使用极坐标系。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">bar &lt;- ggplot(data = diamonds) + </span><br><span class="line">  geom_bar( </span><br><span class="line">    mapping = aes(x = cut, fill = cut), </span><br><span class="line">    show.legend = FALSE, </span><br><span class="line">    width = 1 </span><br><span class="line">  ) + </span><br><span class="line">  theme(aspect.ratio = 1) + </span><br><span class="line">  labs(x = NULL, y = NULL) </span><br><span class="line"> </span><br><span class="line">bar + coord_flip() </span><br><span class="line">bar + coord_polar()</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="图形分层语法"><a href="#图形分层语法" class="headerlink" title="图形分层语法"></a>图形分层语法</h2><p>你可以将任何图形精确地描述为数据集、几何对象、映射集合、统计变换、位置调整、坐标系和分面模式的一个组合。<br>ggplot(data &#x3D; &lt;DATA&gt;) +<br>&lt;GEOM_FUNCTION&gt;(<br>mapping &#x3D; aes(&lt;MAPPINGS&gt;),<br>stat &#x3D; &lt;STAT&gt;,<br>position &#x3D; &lt;POSITION&gt;<br>) +<br>&lt;COORDINATE_FUNCTION&gt; +<br>&lt;FACET_FUNCTION&gt;<br><br>如何从头开始构建一个基本图形<br>1、首先需要有一个数据集，然后（通过统计变换）将其转换为想要显示的信息\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_3.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>2、选择一个几何对象来表示转换后的数据中的每个观测值，然后选择几何对象的图形属性来表示数据中的变量，这会将每个变量的值映射为图形属性的水平。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_4.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>3、选择放置几何对象的坐标系。你可以使用对象本身的一个图形属性来显示 x 变量和 y变量的值。这样就生成了一张完整的图。之后可以设置详细属性。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_5.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="ggplot精简化"><a href="#ggplot精简化" class="headerlink" title="ggplot精简化"></a>ggplot精简化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = faithful, mapping = aes(x = eruptions)) + </span><br><span class="line">  geom_freqpoly(binwidth = 0.25)</span><br></pre></td></tr></table></figure>
+<p>以更精简的方式重写前面的绘图语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot(faithful, aes(eruptions)) + </span><br><span class="line">  geom_freqpoly(binwidth = 0.25)</span><br></pre></td></tr></table></figure>
+<p>将数据转换管道操作的最终结果转换为一张图</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">diamonds %&gt;% </span><br><span class="line">  count(cut, clarity) %&gt;% </span><br><span class="line">  ggplot(aes(clarity, cut, fill = n)) + </span><br><span class="line">    geom_tile()</span><br></pre></td></tr></table></figure>
+
+
+<p>\newpage</p>
+<h1 id="使用dplyr进行数据转换"><a href="#使用dplyr进行数据转换" class="headerlink" title="使用dplyr进行数据转换"></a>使用dplyr进行数据转换</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(nycflights13) #数据包</span><br><span class="line">library(tidyverse)</span><br></pre></td></tr></table></figure>
+
+<p><strong>数据类型</strong><br>•int 表示整数型变量。<br>•dbl 表示双精度浮点数型变量，或称实数。<br>•chr 表示字符向量，或称字符串。<br>•dttm 表示日期时间（日期 + 时间）型变量。<br>•lgl 表示逻辑型变量，是一个仅包括 TRUE 和 FALSE 的向量。<br>•fctr 表示因子，R 用其来表示具有固定数目的值的分类变量。<br>•date 表示日期型变量。<br><br><strong>比较运算符</strong>：&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;、!&#x3D;（不等于）和 &#x3D;&#x3D;（等于）<br>使用 &#x3D;&#x3D; 进行比较\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 结果报错，因为是浮点数</span><br><span class="line">1/49 * 49 == 1</span><br><span class="line"># 需要用near运算</span><br><span class="line">near(1 / 49 * 49, 1)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>德摩根定律</strong><br>非(P 且 Q) &#x3D; (非 P) 或 (非 Q)<br>非(P 或 Q) &#x3D; (非 P) 且 (非 Q)<br><br><strong>算数运算</strong>算术运算符：+、-、*、&#x2F;、^ <br><strong>模运算符</strong>：%&#x2F;%（整数除法）和 %%（求余）<br><strong>对数函数</strong>：log()、log2() 和 log10(),log2() 函数对数<br>标度的数值增加 1 个单位，意味着初始数值加倍；减少 1 个单位，则意味着初始数值<br>减半 <br><strong>偏移函数</strong>:lead() 和 lag() 函数可以返回一个序列的领先值和滞后值。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(x &lt;- 1:10) </span><br><span class="line">lag(x) </span><br><span class="line">lead(x) </span><br></pre></td></tr></table></figure>
+<p><strong>累加和滚动聚合</strong>：累加和、累加积、累加最小值和累加最大值的函数：cumsum()、cumprod()、commin() 和 cummax()<br>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x</span><br><span class="line">cumsum(x) </span><br><span class="line">cummean(x) </span><br></pre></td></tr></table></figure>
+<p><strong>排秩</strong>: min_rank() 默认的排秩方式是，最小的值获得最前面的名次，使用<br>desc(x) 可以让最大的值获得最前面的名次\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y &lt;- c(1, 2, 2, NA, 3, 4) </span><br><span class="line">min_rank(y)</span><br><span class="line">min_rank(desc(y))</span><br></pre></td></tr></table></figure>
+<p>其他排序方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">row_number(y) </span><br><span class="line">dense_rank(y) </span><br><span class="line">percent_rank(y) </span><br><span class="line">cume_dist(y) </span><br></pre></td></tr></table></figure>
+
+<p><strong>逻辑运算符</strong></p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_6.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="使用filter-筛选"><a href="#使用filter-筛选" class="headerlink" title="使用filter()筛选"></a>使用filter()筛选</h2><figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 筛选flights数据集出 1月 1 日的所有航班</span><br><span class="line">filter(flights, month == 1, day == 1) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将筛选结果赋值</span><br><span class="line">jan1 &lt;- filter(flights, month == 1, day == 1)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 找出 11 月或 12 月出发的所有航班</span><br><span class="line">filter(flights, month == 11 | month == 12)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 要找出延误时间（到达或出发）不多于 2 小时的航班</span><br><span class="line">filter(flights, !(arr_delay &gt; 120 | dep_delay &gt; 120)) </span><br><span class="line">filter(flights, arr_delay &lt;= 120, dep_delay &lt;= 120)</span><br><span class="line"># 两种方法结果一样</span><br></pre></td></tr></table></figure>
+
+<p><strong>缺失值NA</strong><br>NA表示未知的值，如果运算中包含了未知值，那么运算结果一般来说也是个未知值\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10 == NA</span><br><span class="line">NA + 10</span><br><span class="line">NA == NA</span><br></pre></td></tr></table></figure>
+<p>filter()只能筛选出条件为TRUE的行；它会排除那些条件为 FALSE 和 NA 的行。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df &lt;- tibble(x = c(1, NA, 3)) </span><br><span class="line">filter(df, x &gt; 1) </span><br><span class="line">filter(df, is.na(x) | x &gt; 1) </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="使用arrange-排列行"><a href="#使用arrange-排列行" class="headerlink" title="使用arrange()排列行"></a>使用arrange()排列行</h2><p>arrange()接受一个数据框和一组作为排序依据的列名作为参数。如果列名不只一个，那么就使用<strong>后面的列在前面排序的基础上</strong>继续排序\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 对flights数据基于年月日排序</span><br><span class="line">arrange(flights, year, month, day) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#通过desc对年降序排序</span><br><span class="line">arrange(flights, desc(year)) </span><br></pre></td></tr></table></figure>
+
+<p>缺失值会<strong>排到最后</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df &lt;- tibble(x = c(5, 2, NA)) </span><br><span class="line">arrange(df, x) </span><br><span class="line">arrange(df, desc(x)) </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="使用select-选择列"><a href="#使用select-选择列" class="headerlink" title="使用select()选择列"></a>使用select()选择列</h2><p>select() 函数可以让你快速生成一个有用的变量子集\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 选择年月日列 </span><br><span class="line">select(flights, year, month, day)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 选择“year”和“day”之间的所有列（包括“year”和“day”）</span><br><span class="line">select(flights, year:day)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#  选择不在“year”和“day”之间的所有列（不包括“year”和“day”）</span><br><span class="line">select(flights, -(year:day)) </span><br></pre></td></tr></table></figure>
+
+<p><strong>补充的辅助函数</strong><br>•  starts_with(“abc”)：匹配以“abc”开头的名称。<br>•  ends_with(“xyz”)：匹配以“xyz”结尾的名称。<br>•  contains(“ijk”)：匹配包含“ijk”的名称。<br>•  matches(“(.)\1”)：选择匹配正则表达式的那些变量。这个正则表达式会匹配名称中有<br>重复字符的变量。<br>•  num_range(“x”, 1:3)：匹配 x1、x2 和 x3。<br><br>select() 函数的变体 **rename()**函数来可以以保留所有未明确提及的变量\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename(flights, tail_num = tailnum) </span><br></pre></td></tr></table></figure>
+<p>everything()将几个变量移到数据框开头\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select(flights, time_hour, air_time, everything())</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="使用mutate-添加新变量"><a href="#使用mutate-添加新变量" class="headerlink" title="使用mutate()添加新变量"></a>使用mutate()添加新变量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 筛选出较短数据</span><br><span class="line">flights_sml &lt;- select(flights, </span><br><span class="line">  year:day, </span><br><span class="line">  ends_with(&quot;delay&quot;), </span><br><span class="line">  distance, </span><br><span class="line">  air_time </span><br><span class="line">) </span><br><span class="line"># 添加数据</span><br><span class="line"># 在 fliflights_sml添加gain与speed</span><br><span class="line">mutate(flights_sml, </span><br><span class="line">  gain = arr_delay - dep_delay, </span><br><span class="line">  speed = distance / air_time * 60 </span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+
+<p>transmute()只会保存新建的变量 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">transmute(flights, </span><br><span class="line">  gain = arr_delay - dep_delay, </span><br><span class="line">  hours = air_time / 60, </span><br><span class="line">  gain_per_hour = gain / hours </span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="使用summarize-进行分组摘要"><a href="#使用summarize-进行分组摘要" class="headerlink" title="使用summarize()进行分组摘要"></a>使用summarize()进行分组摘要</h2><p>summarize()可以将数据框折叠成一行\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summarize(flights, delay = mean(dep_delay, na.rm = TRUE)) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 通过group_by分组后，进行摘要</span><br><span class="line">by_day &lt;- group_by(flights, year, month, day) </span><br><span class="line">summarize(by_day, delay = mean(dep_delay, na.rm = TRUE)) </span><br></pre></td></tr></table></figure>
+
+<p><strong>去除缺失值</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flights %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  summarize(mean = mean(dep_delay)) </span><br><span class="line"># 如果输入中有缺失值，那么输出也会是缺失值。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled &lt;- flights %&gt;% </span><br><span class="line">  filter(!is.na(dep_delay), !is.na(arr_delay)) </span><br><span class="line"></span><br><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  summarize(mean = mean(dep_delay)) </span><br><span class="line"># 以通过先去除取消的航班来解决缺失值问题</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用摘要函数"><a href="#常用摘要函数" class="headerlink" title="常用摘要函数"></a>常用摘要函数</h3><p><strong>位置度量</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  summarize( </span><br><span class="line">    # 平均延误时间： </span><br><span class="line">    avg_delay1 = mean(arr_delay), </span><br><span class="line">    # 平均正延误时间： </span><br><span class="line">    avg_delay2 = mean(arr_delay[arr_delay &gt; 0]) </span><br><span class="line">  ) </span><br></pre></td></tr></table></figure>
+
+<p><strong>分散程度度量</strong>：sd(x)、IQR(x) 和 mad(x)<br>均方误差（又称标准误差，standard deviation，sd）是分散程度的标准度量方式。四分<br>位距 IQR() 和绝对中位差 mad(x) 基本等价\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(dest) %&gt;% </span><br><span class="line">  summarize(distance_sd = sd(distance)) %&gt;% </span><br><span class="line">  arrange(desc(distance_sd)) </span><br></pre></td></tr></table></figure>
+
+<p><strong>秩的度量</strong>：min(x)、quantile(x, 0.25) 和 max(x)<br>例子：quantile(x,  0.25) 会找出 x 中按从小到大顺序大于前25% 而小于后 75% 的值\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  summarize( </span><br><span class="line">    first = min(dep_time), </span><br><span class="line">    last = max(dep_time) </span><br><span class="line">  ) </span><br></pre></td></tr></table></figure>
+
+<p><strong>定位度量</strong>：first(x)、nth(x, 2) 和 last(x)<br>这几个函数的作用与 x[1]、x[2] 和 x[length(x)] 相同\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  summarize( </span><br><span class="line">    first_dep = first(dep_time), </span><br><span class="line">        last_dep = last(dep_time) </span><br><span class="line">  ) </span><br></pre></td></tr></table></figure>
+<p><strong>计数</strong><br>计数（n()）或非缺失值的计数（sum(!is_na())）\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(tailnum) %&gt;% </span><br><span class="line">  summarize( </span><br><span class="line">    delay = mean(arr_delay, na.rm = TRUE), </span><br><span class="line">    n = n() </span><br><span class="line">  ) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 仅计数的简单函数</span><br><span class="line">not_cancelled %&gt;% </span><br><span class="line">  count(dest) </span><br></pre></td></tr></table></figure>
+
+<p><strong>逻辑值的计数和比例</strong>：sum(x &gt; 10) 和 mean(y &#x3D;&#x3D; 0) <br>当与数值型函数一同使用时，TRUE 会转换为 1，FALSE 会转换为 0。这使得 sum() 和mean()非常适用于逻辑值：sum(x) 可以找出 x 中TRUE的<strong>数量</strong>，mean(x)则可以找出<strong>比例</strong>。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  summarize(n_early = sum(dep_time &lt; 500))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">not_cancelled %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  summarize(hour_perc = mean(arr_delay &gt; 60)) </span><br></pre></td></tr></table></figure>
+<p><br><strong>按多个变量分组</strong><br>当使用多个变量进行分组时，每次的摘要统计会用掉一个分组变量。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">daily &lt;- group_by(flights, year, month, day) </span><br><span class="line">(per_day   &lt;- summarize(daily, flights = n())) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(per_month &lt;- summarize(per_day, flights = sum(flights))) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(per_year  &lt;- summarize(per_month, flights = sum(flights))) </span><br></pre></td></tr></table></figure>
+<p><br><strong>取消分组</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">daily %&gt;% </span><br><span class="line">  ungroup() %&gt;%             # 不再按日期分组 </span><br><span class="line">  summarize(flights = n())  # 所有航班 </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="分组新变量"><a href="#分组新变量" class="headerlink" title="分组新变量"></a>分组新变量</h2><p>分组也可以与 mutate() 和 filter()函数结合\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#  找出每个分组中最差的成员</span><br><span class="line">flights_sml %&gt;% </span><br><span class="line">  group_by(year, month, day) %&gt;% </span><br><span class="line">  filter(rank(desc(arr_delay)) &lt; 10) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 找出大于某个阈值的所有分组</span><br><span class="line">popular_dests &lt;- flights %&gt;% </span><br><span class="line">  group_by(dest) %&gt;% </span><br><span class="line">  filter(n() &gt; 365) </span><br><span class="line">popular_dests </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 对数据进行标准化以计算分组指标</span><br><span class="line">popular_dests %&gt;% </span><br><span class="line">  filter(arr_delay &gt; 0) %&gt;% </span><br><span class="line">  mutate(prop_delay = arr_delay / sum(arr_delay)) %&gt;% </span><br><span class="line">  select(year:day, dest, arr_delay, prop_delay) </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="探索性数据分析"><a href="#探索性数据分析" class="headerlink" title="探索性数据分析"></a>探索性数据分析</h1><p><strong>变量</strong>：一种可测量的数量、质量或属性。<br><strong>值</strong>：变量在测量时的状态。变量值在每次测量之间可以发生改变。<br><strong>观测</strong>（个案）：指在相同条件下进行的一组测量。一个观测会包含多个值，每个值关联到不同的变量。<br><strong>表格数据</strong>：一组值的集合，其中每个值都关联一个变量和一个观测。如果每个值都有自己所属的“单元”，每个变量都有自己所属的列，每个观测都有自己所属的行，那么表格数据就是<strong>整洁</strong>的。\</p>
+<h2 id="分布可视化"><a href="#分布可视化" class="headerlink" title="分布可视化"></a>分布可视化</h2><p>对直方图的分析<br>•  每个簇中的观测是如何相似的？<br>•  不同簇之间的观测是如何不相似的？<br>•  如何解释或描述各个簇？<br>•  为什么有些簇的外观可能具有误导作用？\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 检测分类变量的分布</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_bar(mapping = aes(x = cut))</span><br><span class="line"># 计数</span><br><span class="line">diamonds %&gt;% </span><br><span class="line">  count(cut) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 检测连续变量的分布</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">#  binwidth 参数来设定直方图中的间隔的宽度，该参数是用 x 轴变量的单位来度量</span><br><span class="line">  geom_histogram(mapping = aes(x = carat), binwidth = 0.5) </span><br><span class="line"># 计数</span><br><span class="line">diamonds %&gt;% </span><br><span class="line">  count(cut_width(carat, 0.5)) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">smaller &lt;- diamonds %&gt;% </span><br><span class="line">  filter(carat &lt; 3) </span><br><span class="line"># 直方图叠加，使用折线图更直观</span><br><span class="line">ggplot(data = smaller, mapping = aes(x = carat, color = cut)) + </span><br><span class="line">  geom_freqpoly(binwidth = 0.1)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot(diamonds) + </span><br><span class="line">  geom_histogram(mapping = aes(x = y), binwidth = 0.5) + </span><br><span class="line"># coord_cartesian() 函数用于放大 x 轴</span><br><span class="line">  coord_cartesian(ylim = c(0, 50))</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="分析数据中的异常值"><a href="#分析数据中的异常值" class="headerlink" title="分析数据中的异常值\"></a>分析数据中的异常值\</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 基于上图的放大x轴可以找到三处异常值，然后通过filter进行筛选</span><br><span class="line">unusual &lt;- diamonds %&gt;% </span><br><span class="line">  filter(y &lt; 3 | y &gt; 20) %&gt;% </span><br><span class="line">  arrange(y) </span><br><span class="line">unusual</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法1</strong>：去除异常值（不建议）\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diamonds2 &lt;- diamonds %&gt;% </span><br><span class="line">  filter(between(y, 3, 20))</span><br></pre></td></tr></table></figure>
+<p><strong>方法2</strong>：异常值替换为NA\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># ifelse() 函数有 3 个参数。第一个参数 test 是一个逻辑向量，如果 test 为 TRUE，函数结果就是第二个参数</span><br><span class="line"># 的值；如果 test 为 FALSE，函数结果就是第三个参数的值。</span><br><span class="line">diamonds2 &lt;- diamonds %&gt;% </span><br><span class="line">  mutate(y = ifelse(y &lt; 3 | y &gt; 20, NA, y))</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h2 id="相关变动"><a href="#相关变动" class="headerlink" title="相关变动"></a>相关变动</h2><p><strong>相关变动</strong>是两个或多个变量以相关的方式共同变化所表现出的趋势。查看相关变动的最好方式是将两个或多个变量间的关系以<strong>可视化</strong>的方式表现出来<br>\</p>
+<h3 id="分类变量与连续变量的相关变动"><a href="#分类变量与连续变量的相关变动" class="headerlink" title="分类变量与连续变量的相关变动"></a>分类变量与连续变量的相关变动</h3><p><strong>方法1</strong>：合并直方图\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = diamonds, mapping = aes(x = price)) + </span><br><span class="line">  geom_freqpoly(mapping = aes(color = cut), binwidth = 500)</span><br></pre></td></tr></table></figure>
+<p>通过密度对计数标准化\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ggplot( </span><br><span class="line">  data = diamonds, </span><br><span class="line">    mapping = aes(x = price, y = after_stat(density)) </span><br><span class="line">  ) + </span><br><span class="line">   geom_freqpoly(mapping = aes(color = cut), binwidth = 500)</span><br></pre></td></tr></table></figure>
+<p><strong>方法2</strong>：箱线图\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_7.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#  geom_boxplot() 函数查看按切割质量分类的价格分布</span><br><span class="line">ggplot(data = diamonds, mapping = aes(x = cut, y = price)) + </span><br><span class="line">  geom_boxplot()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 对箱线图基于hwy进行排序</span><br><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_boxplot( </span><br><span class="line">    mapping = aes( </span><br><span class="line">      x = reorder(class, hwy, FUN = median), </span><br><span class="line">      y = hwy </span><br><span class="line">    ) </span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 选择箱线图</span><br><span class="line">ggplot(data = mpg) + </span><br><span class="line">  geom_boxplot( </span><br><span class="line">    mapping = aes( </span><br><span class="line">      x = reorder(class, hwy, FUN = median), </span><br><span class="line">      y = hwy </span><br><span class="line">    ) </span><br><span class="line">  ) + </span><br><span class="line">  coord_flip()</span><br></pre></td></tr></table></figure>
+
+<p>###两个分类变量的相关变动<br><strong>方法1</strong>计数绘图<br>图中每个圆点的大小表示每个变量组合中的观测数量。相关变动就表示为特定 x 轴变量值与特定 y 轴变量值之间的强相关关系。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_count(mapping = aes(x = cut, y = color))</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法2</strong> 填充图形可视化\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">diamonds %&gt;% </span><br><span class="line">  count(color, cut) %&gt;% </span><br><span class="line">  ggplot(mapping = aes(x = color, y = cut)) + </span><br><span class="line">    geom_tile(mapping = aes(fill = n))</span><br></pre></td></tr></table></figure>
+
+<p>###两个连续变量的相关变动<br><strong>方法1</strong>散点图\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 不适用较多数据</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_point(mapping = aes(x = carat, y = price))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 增加透明度改善堆积问题</span><br><span class="line">ggplot(data = diamonds) + </span><br><span class="line">  geom_point( </span><br><span class="line">    mapping = aes(x = carat, y = price), </span><br><span class="line">    alpha = 1 / 100 </span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+<p><strong>方法2</strong>箱线图\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggplot(data = smaller) + </span><br><span class="line">  geom_bin2d(mapping = aes(x = carat, y = price)) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 对一个连续变量进行分箱，因此这个连续变量的作用就相当于分类变量</span><br><span class="line">ggplot(data = smaller, mapping = aes(x = carat, y = price)) + </span><br><span class="line">  geom_boxplot(mapping = aes(group = cut_width(carat, 0.1)))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 使用 cut_number() 函数近似地显示每个分箱中的数据点的数量</span><br><span class="line">ggplot(data = smaller, mapping = aes(x = carat, y = price)) + </span><br><span class="line">  geom_boxplot(mapping = aes(group = cut_number(carat, 20)))</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="使用tibble实现简单数据框"><a href="#使用tibble实现简单数据框" class="headerlink" title="使用tibble实现简单数据框"></a>使用tibble实现简单数据框</h1><p>tibble 是一种简单数据框，它对传统数据框的功能进行了一些修改，以便更易于使用。<br>tibble() 函数不能<strong>改变输入的类型</strong>（例如，不能将字符串转换为因子）、<strong>变量的名称</strong>，也不能<strong>创建行名称</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 转换tibble</span><br><span class="line">as_tibble(iris) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 创建tibble</span><br><span class="line">tibble( </span><br><span class="line">  x = 1:5, </span><br><span class="line">  y = 1, </span><br><span class="line">  z = x ^ 2 + y </span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建tibble</span><br><span class="line"># 列标题由公式（以 ~ 开头）定义，数据条目以逗号分隔</span><br><span class="line">tribble( </span><br><span class="line">  ~x, ~y, ~z, </span><br><span class="line">  #--|--|---- </span><br><span class="line">  &quot;a&quot;, 2, 3.6, </span><br><span class="line">  &quot;b&quot;, 1, 8.5 </span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+
+<h2 id="tibble与data-frame"><a href="#tibble与data-frame" class="headerlink" title="tibble与data.frame"></a>tibble与data.frame</h2><p><br><strong>打印</strong><br>tibble 的打印方法进行了优化，只显示前 10 行结果,并且列也适合屏幕<br>除了打印列名，tibble 还会打印出列的类型\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tibble( </span><br><span class="line">  a = lubridate::now() + runif(1e3) * 86400, </span><br><span class="line">  b = lubridate::today() + runif(1e3) * 30, </span><br><span class="line">  c = 1:1e3, </span><br><span class="line">  d = runif(1e3), </span><br><span class="line">  e = sample(letters, 1e3, replace = TRUE) </span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+
+<p>使用 print() 函数来打印数据框，并控制打印的行数（n）和显示的宽度（width）。width &#x3D; Inf 可以显示出所有列\</p>
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nycflights13::flights %&gt;% </span><br><span class="line">  print(n = 10, width = Inf)</span><br></pre></td></tr></table></figure>
+<p>控制默认的打印方式<br>•options(tibble.print_max &#x3D; n, tibble.pring_min &#x3D; m)：如果多于 m 行，则只打印出 n行。options(tibble.print_min &#x3D; Inf) 表示总是打印所有行。<br>•options(tibble.width &#x3D; Inf) 表示总是打印所有列，不考虑屏幕的宽度。<br><br><strong>取子集</strong><br>[[ 可以按名称或位置提取变量；$ 只能按名称提取变量，但可以减少一些输入\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">df &lt;- tibble( </span><br><span class="line">  x = runif(5), </span><br><span class="line">  y = rnorm(5) </span><br><span class="line">) </span><br><span class="line"># 按名称提取 </span><br><span class="line">df$x</span><br><span class="line">df[[&quot;x&quot;]] </span><br><span class="line"># 按位置提取 </span><br><span class="line">df[[1]] </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 通过管道操作提取，需要使用特殊的占位符 .</span><br><span class="line">df %&gt;% .$x </span><br><span class="line">df %&gt;% .[[&quot;x&quot;]] </span><br></pre></td></tr></table></figure>
+<p><br><strong>交互旧代码</strong><br>如果遇到比较旧的函数不支持tibble可以使用as.data.frame()函数将tibble转换回data.frame\</p>
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class(as.data.frame(tb)) </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="使用readr进行数据导入"><a href="#使用readr进行数据导入" class="headerlink" title="使用readr进行数据导入"></a>使用readr进行数据导入</h1><p>**read_csv()<strong>读取逗号分隔文件</strong>(CSV文件是数据存储最常用的形式之一)**、read_csv2() 读取分号分隔文件、read_tsv() 读取制表符分隔文件、read_delim() 可以读取使用任意分隔符的文件<br>read_fwf() 读取固定宽度的文件<br>read_log() 读取 Apache 风格的日志文件<br>haven可以读取 SPSS、Stata 和 SAS 文件<br>readxl可以读取 Excel 文件（.xls 和 .xlsx 均可）\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 会打印一份数据列说明，给出每个列的名称和类型</span><br><span class="line">read_csv(&quot;t1.csv&quot;)</span><br></pre></td></tr></table></figure>
+<p>使用skip &#x3D; n来跳过前n行；或者使用comment &#x3D; “#” 来丢弃所有以 # 开头的行\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">read_csv(&quot;The first line of metadata  </span><br><span class="line">  The second line of metadata </span><br><span class="line">  x,y,z </span><br><span class="line">  1,2,3&quot;, skip = 2,</span><br><span class="line">  show_col_types = FALSE) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">read_csv(&quot;# A comment I want to skip </span><br><span class="line">  x,y,z </span><br><span class="line">  1,2,3&quot;, comment = &quot;#&quot;,</span><br><span class="line">  show_col_types = FALSE) </span><br></pre></td></tr></table></figure>
+<p>使用col_names &#x3D; FALSE 来通知 read_csv() 不要将第一行作为列标题，而是将各列依次标注为 X1 至 Xn\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">read_csv(&quot;1,2,3\n4,5,6&quot;, # \n 用于添加新行</span><br><span class="line">         col_names = FALSE,</span><br><span class="line">         show_col_types = FALSE) </span><br></pre></td></tr></table></figure>
+<p>向col_names 传递一个字符向量，以用作列名称\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read_csv(&quot;1,2,3\n4,5,6&quot;, col_names = c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;),</span><br><span class="line">         show_col_types = FALSE) </span><br></pre></td></tr></table></figure>
+<p> na设定使用哪个值来表示文件中的缺失值\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read_csv(&quot;a,b,c\n1,2,.&quot;, na = &quot;.&quot;,</span><br><span class="line">         show_col_types = FALSE) </span><br></pre></td></tr></table></figure>
+<h2 id="解析向量"><a href="#解析向量" class="headerlink" title="解析向量"></a>解析向量</h2><p>parse_logical() 和 parse_integer() 函数分别解析逻辑值和整数。<br>parse_double() 是严格的数值型解析函数，parse_number() 则是灵活的数值型解析函数。<br>parse_character() 解析字符编码。<br>parse_factor() 函数可以创建因子。<br>parse_datetime()、parse_date() 和 parse_time() 函数可以解析不同类型的日期和时间。\</p>
+<h3 id="数值向量解析"><a href="#数值向量解析" class="headerlink" title="数值向量解析"></a>数值向量解析</h3><p>readr 使用了“地区”这一概念，这是可以按照不同地区设置解析选项的一个对象。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parse_double(&quot;1.23&quot;) </span><br><span class="line"># 创建一个新的地区对象并设定decimal_mark参数,可以覆盖.的默认值</span><br><span class="line">parse_double(&quot;1,23&quot;, locale = locale(decimal_mark = &quot;,&quot;)) </span><br></pre></td></tr></table></figure>
+<p>忽略数值前后的非数值型字符。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parse_number(&quot;$100&quot;) </span><br><span class="line">parse_number(&quot;20%&quot;) </span><br><span class="line">parse_number(&quot;It cost $123.45&quot;) </span><br></pre></td></tr></table></figure>
+<p>提取嵌在文本中的数值。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 适用于美国 </span><br><span class="line">parse_number(&quot;$123,456,789&quot;) </span><br><span class="line"> </span><br><span class="line"># 适用于多数欧洲国家 </span><br><span class="line">parse_number( </span><br><span class="line">  &quot;123.456.789&quot;, </span><br><span class="line">  locale = locale(grouping_mark = &quot;.&quot;) </span><br><span class="line">) </span><br><span class="line"> </span><br><span class="line"># 适用于瑞士 </span><br><span class="line">parse_number( </span><br><span class="line">  &quot;123&#x27;456&#x27;789&quot;, </span><br><span class="line">  locale = locale(grouping_mark = &quot;&#x27;&quot;) </span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串向量解析"><a href="#字符串向量解析" class="headerlink" title="字符串向量解析"></a>字符串向量解析</h3><p>readr 全面支持 UTF-8：当读取数据时，它假设数据是 UTF-8 编码的，并总是使用 UTF-8编码写入数据。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x1 &lt;- &quot;El Ni\xf1o was particularly bad this year&quot; </span><br><span class="line">x2 &lt;- &quot;\x82\xb1\x82\xf1\x82\xc9\x82\xbf\x82\xcd&quot;</span><br><span class="line">parse_character(x1, locale = locale(encoding = &quot;Latin1&quot;)) </span><br><span class="line">parse_character(x2, locale = locale(encoding = &quot;Shift-JIS&quot;)) </span><br></pre></td></tr></table></figure>
+<p>guess_encoding() 函数帮助找出文本编码方式。但这个函数并非万无一失，如果有大量文本效果就会更好\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">guess_encoding(charToRaw(x1))</span><br><span class="line">guess_encoding(charToRaw(x2))</span><br></pre></td></tr></table></figure>
+
+<h3 id="日期向量解析"><a href="#日期向量解析" class="headerlink" title="日期向量解析"></a>日期向量解析</h3><p>日期时间格式<br>年: %Y（4 位数）,%y（2 位数；00-69 → 2000-2069、70-99 → 1970-1999）<br>月: %m（2 位数）,%b（简写名称，如 Jan）,%B（完整名称，如 January）<br>日: %d（1 位或 2 位数）,%e（2 位数）<br>时间: %H（0-23 小时）,%I（0-12 小时，必须和 %p 一起使用）,%p（表示 a.m.&#x2F;p.m.）,%M（分钟）,%S（整数秒）,%OS（实数秒）,%Z（时区，America&#x2F;Chicage 这样的名称）,%z（与国际标准时间的时差，如 +0800）<br>非数值字符: %.（跳过一个非数值字符）,%*（跳过所有非数值字符）<br><br>parse_datetime()期待<strong>ISO 8601</strong>国际标准，其中日期的各个部分按从大到小的顺序排列，即年、月、日、小时、分钟、秒\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parse_datetime(&quot;2010-10-01T2010&quot;) </span><br></pre></td></tr></table></figure>
+<p>parse_date()期待<strong>四位数的年份</strong> +  - 或 &#x2F; + <strong>月</strong> + - 或 &#x2F; + <strong>日</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parse_date(&quot;2010-10/01&quot;) </span><br></pre></td></tr></table></figure>
+<p>parse_time()期待<strong>小时</strong> + : + <strong>分钟</strong> + 可选的 : 和秒，以及一个可选的 a.m.&#x2F;p.m. 标识符\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parse_time(&quot;01:10 am&quot;)</span><br><span class="line">parse_time(&quot;20:10:01&quot;) </span><br></pre></td></tr></table></figure>
+<p>基于日期时间格式设置\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parse_date(&quot;01/02/15&quot;, &quot;%m/%d/%y&quot;) </span><br><span class="line">parse_date(&quot;01/02/15&quot;, &quot;%d/%m/%y&quot;) </span><br><span class="line">parse_date(&quot;01/02/15&quot;, &quot;%y/%m/%d&quot;) </span><br></pre></td></tr></table></figure>
+
+<h2 id="解析文件策略"><a href="#解析文件策略" class="headerlink" title="解析文件策略"></a>解析文件策略</h2><p>先使用 guess_parser() 函数返回 readr 最可信的猜测，接着 parse_guess() 函数使用这个猜测来解析列\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">guess_parser(&quot;2010-10-01&quot;) </span><br><span class="line">guess_parser(&quot;15:01&quot;) </span><br><span class="line">guess_parser(c(&quot;TRUE&quot;, &quot;FALSE&quot;)) </span><br><span class="line">guess_parser(c(&quot;1&quot;, &quot;5&quot;, &quot;9&quot;)) </span><br><span class="line">guess_parser(c(&quot;12,352,561&quot;)) </span><br><span class="line"></span><br><span class="line">str(parse_guess(&quot;2010-10-10&quot;)) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h2><p>将数据写回到磁盘：write_csv() 和 write_tsv()<br>如果想要将 CSV 文件导为 Excel 文件，可以使用 write_excel_csv() 函数\</p>
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">write_csv(challenge, &quot;challenge-2.csv&quot;) </span><br><span class="line">read_csv(&quot;challenge-2.csv&quot;) </span><br></pre></td></tr></table></figure>
+
+
+<p>\newpage</p>
+<h1 id="使用dplyr处理关系数据"><a href="#使用dplyr处理关系数据" class="headerlink" title="使用dplyr处理关系数据"></a>使用dplyr处理关系数据</h1><p>通常来说，你会有很多个数据表，而且必须综合使用它们才能回答你所感兴趣的问题。存在于多个表中的这种数据统称为<strong>关系数据</strong>，因为重要的是数据间的关系，而不是单个数据集。<br>•  合并连接：向数据框中加入新变量，新变量的值是另一个数据框中的匹配观测。<br>•  筛选连接：根据是否匹配另一个数据框中的观测，筛选数据框中的观测。<br>•  集合操作：将观测作为集合元素来处理。<br><br>导入分析数据\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#install.packages(&quot;nnycflights13&quot;)</span><br><span class="line">library(nycflights13) </span><br><span class="line"># nycflights13 中包含了与 flights 相关的 4 个tibble</span><br><span class="line">#   airlines：可以根据航空公司的缩写码查到公司全名。</span><br><span class="line">#   airports：给出了每个机场的信息，通过 faa 机场编码进行标识。</span><br><span class="line">#   planes：给出了每架飞机的信息，通过 tailnum 进行标识。</span><br><span class="line">#   weather：给出了纽约机场每小时的天气状况。</span><br></pre></td></tr></table></figure>
+
+<h2 id="健"><a href="#健" class="headerlink" title="健"></a>健</h2><p>连接每对数据表的变量称为<strong>键</strong>,一个变量既可以是主键，也可以是外键。<br>键的类型有两种:<br>•  主键：唯一标识其所在数据表中的观测。例如，planes$tailnum 是一个主键，因为其可以唯一标识 planes 表中的每架飞机。<br>•  外键：唯一标识另一个数据表中的观测。例如，flights$tailnum 是一个外键，因为其出现在 flights 表中，并可以将每次航班与唯一一架飞机匹配。<br>主键与另一张表中与之对应的外键可以构成<strong>关系</strong>。关系通常是一对多的。例如，每个航班只有一架飞机，但每架飞机可以飞多个航班。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 验证主键方法是对主键进行 count() 操作</span><br><span class="line">planes %&gt;% </span><br><span class="line">  count(tailnum) %&gt;% </span><br><span class="line">  filter(n &gt; 1) </span><br><span class="line"></span><br><span class="line">weather %&gt;% </span><br><span class="line">  count(year, month, day, hour, origin) %&gt;% </span><br><span class="line">  filter(n &gt; 1) </span><br></pre></td></tr></table></figure>
+
+<h2 id="合并连接"><a href="#合并连接" class="headerlink" title="合并连接"></a>合并连接</h2><p>合并连接可以将两个表格中的变量组合起来，它先通过两个表格的键匹配观测，然后将一个表格中的变量复制到另一个表格中。<br><br>有颜色的列表示作为“键”的变量：它们用于在表间匹配行。灰色列表示“值”列，是与键对应的值。<br>连接是将 x 中每行连接到 y 中 0 行、一行或多行的一种方法。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_8.png&quot;)</span><br></pre></td></tr></table></figure>
+<p>匹配在实际的连接操作中是用圆点表示的。圆点的数量 &#x3D; 匹配的数量 &#x3D; 结果中行的数量。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_9.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flights2 &lt;- flights %&gt;% </span><br><span class="line">  select(year:day, hour, origin, dest, tailnum, carrier) </span><br><span class="line"></span><br><span class="line">flights2 %&gt;% </span><br><span class="line">  select(-origin, -dest) %&gt;% </span><br><span class="line">  left_join(airlines, by = &quot;carrier&quot;) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 要将航空公司的全名加入 flights2 数据集</span><br><span class="line">flights2 %&gt;% </span><br><span class="line">  select(-origin, -dest) %&gt;% </span><br><span class="line">  left_join(airlines, by = &quot;carrier&quot;) </span><br></pre></td></tr></table></figure>
+
+<p><strong>内连接</strong><br>最简单的一种连接。只要两个观测的键是相等的，内连接就可以匹配它们。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- tribble( </span><br><span class="line">  ~key, ~val_x, </span><br><span class="line">     1, &quot;x1&quot;, </span><br><span class="line">     2, &quot;x2&quot;, </span><br><span class="line">     3, &quot;x3&quot; </span><br><span class="line">) </span><br><span class="line">y &lt;- tribble( </span><br><span class="line">  ~key, ~val_y, </span><br><span class="line">     1, &quot;y1&quot;, </span><br><span class="line">     2, &quot;y2&quot;, </span><br><span class="line">     4, &quot;y3&quot; </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 内连接的结果是一个新数据框，其中包含键、x 值和 y 值。我们使用 by 参数告诉 dplyr 哪个变量是键</span><br><span class="line">x %&gt;% </span><br><span class="line">  inner_join(y, by = &quot;key&quot;) </span><br></pre></td></tr></table></figure>
+
+<p><strong>外连接</strong><br>内连接保留同时存在于两个表中的观测，外连接则保留至少存在于一个表中的观测<br>•  左连接：保留 x 中的所有观测。<br>•  右连接：保留 y 中的所有观测<br>•  全连接：保留 x 和 y 中的所有观测。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_10.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>重复键</strong><br>两张表中都有重复键。这通常意味着出现了错误，因为键在任意一张表中都不能唯一标识观测。当连接这样的重复键时，你会得到所有可能的组合，即笛卡儿积。</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_11.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- tribble( </span><br><span class="line">  ~key, ~val_x, </span><br><span class="line">     1, &quot;x1&quot;, </span><br><span class="line">     2, &quot;x2&quot;, </span><br><span class="line">     2, &quot;x3&quot;, </span><br><span class="line">     1, &quot;x4&quot; </span><br><span class="line">) </span><br><span class="line">y &lt;- tribble( </span><br><span class="line">  ~key, ~val_y, </span><br><span class="line">     1, &quot;y1&quot;, </span><br><span class="line">     2, &quot;y2&quot; </span><br><span class="line">) </span><br><span class="line">left_join(x, y, by = &quot;key&quot;) </span><br></pre></td></tr></table></figure>
+
+<p><strong>定义键列</strong><br>定义键通过 by  &#x3D;  “key” 来实现<br>默认值 by &#x3D; NULL ,使用存在于两个表中的所有变量\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flights2 %&gt;% </span><br><span class="line">  left_join(weather) </span><br></pre></td></tr></table></figure>
+<p>by  &#x3D;  “x”, 这种方式与自然连接很相似，但只使用某些公共变量\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flights2 %&gt;% </span><br><span class="line">  left_join(planes, by = &quot;tailnum&quot;) </span><br></pre></td></tr></table></figure>
+<p>命名字符向量 by &#x3D; c(“a” &#x3D; “b”)。这种方式会匹配 x 表中的 a 变量和 y 表中的 b 变量。输出结果中使用的是 x 表中的变量\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flights2 %&gt;% </span><br><span class="line">  left_join(airports, c(&quot;dest&quot; = &quot;faa&quot;)) </span><br></pre></td></tr></table></figure>
+
+<h2 id="筛选连接"><a href="#筛选连接" class="headerlink" title="筛选连接"></a>筛选连接</h2><p>•  semi_join(x, y)：保留 x 表中与 y 表中的观测相匹配的所有观测。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_12.png&quot;)</span><br></pre></td></tr></table></figure>
+<p>•  anti_join(x, y)：丢弃 x 表中与 y 表中的观测相匹配的所有观测。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_13.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 设定筛选数据</span><br><span class="line">top_dest &lt;- flights %&gt;% </span><br><span class="line">  count(dest, sort = TRUE) %&gt;% </span><br><span class="line">  head(10) </span><br><span class="line">top_dest </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 半连接</span><br><span class="line">flights %&gt;% </span><br><span class="line">  semi_join(top_dest) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 反连接</span><br><span class="line">flights %&gt;% </span><br><span class="line">  anti_join(planes, by = &quot;tailnum&quot;) %&gt;% </span><br><span class="line">  count(tailnum, sort = TRUE) </span><br></pre></td></tr></table></figure>
+
+<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><p>intersect(x, y)：返回既在 x 表，又在 y 表中的观测。<br>union(x, y)：返回 x 表或 y 表中的唯一观测。<br>setdiff(x, y):返回在 x 表，但不在 y 表中的观测。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 设定数据</span><br><span class="line">df1 &lt;- tribble( </span><br><span class="line">  ~x, ~y, </span><br><span class="line">   1,  1, </span><br><span class="line">   2,  1 </span><br><span class="line">) </span><br><span class="line">df2 &lt;- tribble( </span><br><span class="line">  ~x, ~y, </span><br><span class="line">   1,  1, </span><br><span class="line">   1,  2 </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">intersect(df1, df2) </span><br><span class="line"></span><br><span class="line">union(df1, df2) </span><br><span class="line"></span><br><span class="line">setdiff(df1, df2) </span><br><span class="line"></span><br><span class="line">setdiff(df2, df1) </span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="使用stringr处理字符串"><a href="#使用stringr处理字符串" class="headerlink" title="使用stringr处理字符串"></a>使用stringr处理字符串</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">library(stringr)</span><br></pre></td></tr></table></figure>
+<h2 id="字符串基础"><a href="#字符串基础" class="headerlink" title="字符串基础"></a>字符串基础</h2><p>如果想要在字符串中包含一个单引号或双引号，可以使用 \ 对其进行“转义”\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">double_quote &lt;- &quot;\&quot;&quot; #  &#x27;&quot;&#x27; </span><br><span class="line">double_quote</span><br><span class="line">single_quote &lt;- &#x27;\&#x27;&#x27; # &quot;&#x27;&quot;</span><br><span class="line">single_quote</span><br><span class="line"></span><br><span class="line"># 以使用 writelines() 函数要查看字符串的正常内容</span><br><span class="line">x &lt;- c(&quot;\&quot;&quot;, &quot;\\&quot;) </span><br><span class="line">x </span><br><span class="line">writeLines(x) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># str_length() 函数可以返回字符串中的字符数量</span><br><span class="line">str_length(c(&quot;a&quot;, &quot;R for data science&quot;, NA)) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 使用 str_c() 函数组合字符串</span><br><span class="line">str_c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;) </span><br><span class="line"># 以使用 sep 参数来控制字符串间的分隔方式</span><br><span class="line">str_c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;, sep = &quot;+&quot;) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 以使用 collapse() 函数将字符向量合并为字符串</span><br><span class="line">str_c(c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;), collapse = &quot;+&quot;) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 使用 str_sub() 函数来提取字符串的一部分</span><br><span class="line">x &lt;- c(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Pear&quot;) </span><br><span class="line">str_sub(x, 1, 3)</span><br><span class="line"># 负数表示从后往前数 </span><br><span class="line">str_sub(x, -3, -1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则表达式处理字符串"><a href="#正则表达式处理字符串" class="headerlink" title="正则表达式处理字符串"></a>正则表达式处理字符串</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;, &quot;.&quot;, &quot;\\&quot;, 1, &quot;1 \n 2 &quot;  ) </span><br><span class="line">str_view(x, &quot;an&quot;) # 精确匹配 an</span><br><span class="line">str_view(x, &quot;.a.&quot;) #匹配任意 a并且前后有字符</span><br><span class="line">str_view(x, &quot;\\.&quot;) # 通过转义识别 . </span><br><span class="line">str_view(x, &quot;\\d&quot;) #  \d 可以匹配任意数字。</span><br><span class="line">str_view(x, &quot;\\s&quot;)#  \s 可以匹配任意空白字符</span><br><span class="line">str_view(x, &quot;\\\\&quot;) # 通过转义识别 \ </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;) </span><br><span class="line">str_view(x, &quot;^a&quot;) #  ^ 从字符串开头进行匹配。</span><br><span class="line">str_view(x, &quot;a$&quot;) #  $ 从字符串末尾进行匹配。</span><br></pre></td></tr></table></figure>
+<p>正则表达式的重复<br>•  ?：0 次或 1 次。<br>•  +：1 次或多次。<br>•  *：0 次或多次。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- &quot;1888 is the longest year in Roman numerals: MDCCCLXXXVIII&quot; </span><br><span class="line">str_view(x, &quot;CC?&quot;)</span><br><span class="line">str_view(x, &quot;CC+&quot;)</span><br><span class="line">str_view(x, &#x27;C[LX]+&#x27;)</span><br></pre></td></tr></table></figure>
+<p>设置精确匹配的次数<br>•  {n}：匹配 n 次。<br>•  {n,}：匹配 n 次或更多次。<br>•  {,m}：最多匹配 m 次。<br>•  {n, m}：匹配 n 到 m 次。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str_view(x, &quot;C&#123;2&#125;&quot;)</span><br><span class="line">str_view(x, &quot;C&#123;2,&#125;&quot;)</span><br><span class="line">str_view(x, &quot;C&#123;2,3&#125;&quot;)</span><br></pre></td></tr></table></figure>
+<p><br><strong>匹配检测</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 使用 str_detect() 函数返回一个与输入向量具有同样长度的逻辑向量</span><br><span class="line">x &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;) </span><br><span class="line">str_detect(x, &quot;e&quot;)</span><br><span class="line"># 找出至少包含一个元音字母的所有单词，然后取反 </span><br><span class="line">no_vowels_1 &lt;- !str_detect(words, &quot;[aeiou]&quot;) </span><br><span class="line"># 选取出匹配某种模式的元素,逻辑取子集</span><br><span class="line">str_subset(words, &quot;x$&quot;) # x结尾的</span><br><span class="line">#   str_count()返回字符串中匹配的数量</span><br><span class="line">x &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;) </span><br><span class="line">str_count(x, &quot;a&quot;) </span><br></pre></td></tr></table></figure>
+<p>字符串是数据框的一列时的正则化\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">df &lt;- tibble( </span><br><span class="line">  word = words, </span><br><span class="line">  i = seq_along(word) </span><br><span class="line">) </span><br><span class="line">df %&gt;% </span><br><span class="line">  filter(str_detect(words, &quot;x$&quot;)) </span><br><span class="line">df %&gt;% </span><br><span class="line">  mutate( </span><br><span class="line">    vowels = str_count(word, &quot;[aeiou]&quot;), </span><br><span class="line">    consonants = str_count(word, &quot;[^aeiou]&quot;) </span><br><span class="line">  ) </span><br></pre></td></tr></table></figure>
+<p><br><strong>分组匹配</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">noun &lt;- &quot;(a|the) ([^ ]+)&quot; </span><br><span class="line">has_noun &lt;- sentences %&gt;% </span><br><span class="line">  str_subset(noun) %&gt;% </span><br><span class="line">  head(10) </span><br><span class="line"># str_extract() 函数可以给出完整匹配</span><br><span class="line">has_noun %&gt;% </span><br><span class="line">  str_extract(noun) </span><br><span class="line"># str_match() 函数则可以给出每个独立分组</span><br><span class="line">has_noun %&gt;% </span><br><span class="line">  str_match(noun) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 使用 tidyr::extract() 功能类似str_match()</span><br><span class="line">tibble(sentence = sentences) %&gt;% </span><br><span class="line">  tidyr::extract( </span><br><span class="line">    sentence, c(&quot;article&quot;, &quot;noun&quot;), &quot;(a|the) ([^ ]+)&quot;, </span><br><span class="line">    remove = FALSE </span><br><span class="line">  ) </span><br></pre></td></tr></table></figure>
+<p><br><strong>替换匹配内容</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(&quot;apple&quot;, &quot;pear&quot;, &quot;banana&quot;) </span><br><span class="line">str_replace(x, &quot;[aeiou]&quot;, &quot;-&quot;) </span><br><span class="line">str_replace_all(x, &quot;[aeiou]&quot;, &quot;-&quot;) </span><br><span class="line">x &lt;- c(&quot;1 house&quot;, &quot;2 cars&quot;, &quot;3 people&quot;) </span><br><span class="line">str_replace_all(x, c(&quot;1&quot; = &quot;one&quot;, &quot;2&quot; = &quot;two&quot;, &quot;3&quot; = &quot;three&quot;)) </span><br></pre></td></tr></table></figure>
+<p><br><strong>替换匹配内容</strong>\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sentences %&gt;% </span><br><span class="line">  head(2) %&gt;% </span><br><span class="line">  str_split(&quot; &quot;) # 将字符串拆分为多个片段，返回列表</span><br><span class="line">sentences %&gt;% </span><br><span class="line">  head(2) %&gt;% </span><br><span class="line">  str_split(&quot; &quot;, simplify = TRUE) # 设置 simplify = TRUE 返回一个矩阵</span><br></pre></td></tr></table></figure>
+<p><br><strong>函数检索</strong>\</p>
+<figure class="highlight plaintext"><figcaption><span>eval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apropos(&quot;replace&quot;) # 以在全局环境空间中搜索所有可用对象</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="使用forcats处理因子"><a href="#使用forcats处理因子" class="headerlink" title="使用forcats处理因子"></a>使用forcats处理因子</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">library(forcats)</span><br></pre></td></tr></table></figure>
+<h2 id="创建因子"><a href="#创建因子" class="headerlink" title="创建因子"></a>创建因子</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">x1 &lt;- c(&quot;Dec&quot;, &quot;Apr&quot;, &quot;Jan&quot;, &quot;Mar&quot;) # 创建变量</span><br><span class="line">x2 &lt;- c(&quot;Dec&quot;, &quot;Apr&quot;, &quot;Jam&quot;, &quot;Mar&quot;)</span><br><span class="line">month_levels &lt;- c(  # 创建因子</span><br><span class="line">  &quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, </span><br><span class="line">  &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot; </span><br><span class="line">)</span><br><span class="line">y1 &lt;- factor(x1, levels = month_levels) </span><br><span class="line">y1 </span><br><span class="line"># 不在有效水平集合内的所有值都会自动转换为 NA</span><br><span class="line">y2 &lt;- factor(x2, levels = month_levels) </span><br><span class="line">y2 </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 因子的顺序与初始数据的顺序保持一致</span><br><span class="line">f1 &lt;- factor(x1, levels = unique(x1)) # 水平设置为unique(x)</span><br><span class="line">f1 </span><br><span class="line">f2 &lt;- x1 %&gt;% factor() %&gt;% fct_inorder() # 同上</span><br><span class="line">f2 </span><br><span class="line"># 直接访问因子的有效水平</span><br><span class="line">levels(f2) </span><br></pre></td></tr></table></figure>
+
+<h2 id="查看因子"><a href="#查看因子" class="headerlink" title="查看因子"></a>查看因子</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 查看因子水平</span><br><span class="line">gss_cat %&gt;% </span><br><span class="line">  count(race) </span><br><span class="line"># 使用条形图查看</span><br><span class="line">ggplot(gss_cat, aes(race)) + </span><br><span class="line">  geom_bar()</span><br><span class="line">ggplot(gss_cat, aes(race)) + </span><br><span class="line">  geom_bar() + </span><br><span class="line">  scale_x_discrete(drop = FALSE) # 显示没有数据的水平</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改因子水平"><a href="#修改因子水平" class="headerlink" title="修改因子水平"></a>修改因子水平</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">gss_cat %&gt;% count(partyid) # 原水平</span><br><span class="line">gss_cat %&gt;% </span><br><span class="line">  mutate(partyid = fct_recode(partyid,  # 修改水平</span><br><span class="line">    &quot;Republican, strong&quot;    = &quot;Strong republican&quot;, </span><br><span class="line">    &quot;Republican, weak&quot;      = &quot;Not str republican&quot;, </span><br><span class="line">    &quot;Independent, near rep&quot; = &quot;Ind,near rep&quot;, </span><br><span class="line">    &quot;Independent, near dem&quot; = &quot;Ind,near dem&quot;, </span><br><span class="line">    &quot;Democrat, weak&quot;        = &quot;Not str democrat&quot;, </span><br><span class="line">    &quot;Democrat, strong&quot;      = &quot;Strong democrat&quot; </span><br><span class="line">  )) %&gt;% </span><br><span class="line">  count(partyid)  #修改后的水平</span><br><span class="line"></span><br><span class="line">gss_cat %&gt;% </span><br><span class="line">  mutate(partyid = fct_collapse(partyid, #合并水平</span><br><span class="line">    other = c(&quot;No answer&quot;, &quot;Don&#x27;t know&quot;, &quot;Other party&quot;), </span><br><span class="line">    rep = c(&quot;Strong republican&quot;, &quot;Not str republican&quot;), </span><br><span class="line">    ind = c(&quot;Ind,near rep&quot;, &quot;Independent&quot;, &quot;Ind,near dem&quot;), </span><br><span class="line">    dem = c(&quot;Not str democrat&quot;, &quot;Strong democrat&quot;) </span><br><span class="line">  )) %&gt;% </span><br><span class="line">  count(partyid) # 合并后的水平</span><br></pre></td></tr></table></figure>
+
+<p>\newpage</p>
+<h1 id="使用lubridate处理日期和时间"><a href="#使用lubridate处理日期和时间" class="headerlink" title="使用lubridate处理日期和时间"></a>使用lubridate处理日期和时间</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(lubridate) </span><br><span class="line">library(nycflights13) # 数据集</span><br></pre></td></tr></table></figure>
+<h2 id="创建日期或时间"><a href="#创建日期或时间" class="headerlink" title="创建日期或时间"></a>创建日期或时间</h2><p>日期类型<br>• 日期：在 tibble 中显示为 <date>。<br>• 时间：一天中的某个时刻，在 tibble 中显示为 <time>。<br>• 日期时间：可以唯一标识某个时刻（通常精确到秒）的日期加时间，在 tibble 中显示为<dttm>。\</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 通过字符串创建</span><br><span class="line">ymd(&quot;2017-01-31&quot;) #年日月对应明确值</span><br><span class="line">mdy(&quot;January 31st, 2017&quot;) </span><br><span class="line">dmy(&quot;31-Jan-2017&quot;) </span><br><span class="line">ymd(20170131) # 不加&quot;&quot;也可以</span><br><span class="line">ymd_hms(&quot;2017-01-31 20:11:59&quot;) </span><br><span class="line">mdy_hm(&quot;01/31/2017 08:01&quot;) </span><br><span class="line">ymd(20170131, tz = &quot;UTC&quot;) # 增加时区</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 通过成分创建</span><br><span class="line">flights %&gt;% </span><br><span class="line">  select(year, month, day, hour, minute) # 原数据中的已有数据</span><br><span class="line">flights %&gt;% </span><br><span class="line">  select(year, month, day, hour, minute) %&gt;% </span><br><span class="line">  mutate(  # 添加新数据</span><br><span class="line">    departure = make_datetime(year, month, day, hour, minute) # 创建时间</span><br><span class="line">  ) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">now()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 通过其他类型数据创建</span><br><span class="line">as_datetime(&quot;2023-01-01&quot;)</span><br><span class="line">as_date(&quot;2023-01-01 10:10:10 CST&quot;) </span><br><span class="line">as_datetime(60 * 60 * 10) # 使用“Unix 时间戳”（即 1970-01-01）的偏移量转换</span><br><span class="line">as_date(365 * 10 + 2) </span><br></pre></td></tr></table></figure>
+
+<h2 id="日期时间成分"><a href="#日期时间成分" class="headerlink" title="日期时间成分"></a>日期时间成分</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">datetime &lt;- ymd_hms(&quot;2023-01-02 03:04:05&quot;) </span><br><span class="line"># 获取成分</span><br><span class="line">year(datetime) </span><br><span class="line">month(datetime) </span><br><span class="line">mday(datetime) # 一周中的第几天</span><br><span class="line">yday(datetime) # 一年中的第几天</span><br><span class="line">wday(datetime) # 一个月中的第几天</span><br><span class="line">month(datetime, label = TRUE) # 返回全名</span><br><span class="line">wday(datetime, label = TRUE, abbr = FALSE) # 返回全名</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 将日期舍入到临近的一个时间单位</span><br><span class="line">datetime &lt;- ymd_hms(&quot;2023-05-15 03:04:05&quot;) </span><br><span class="line">floor_date(datetime, &quot;week&quot;)</span><br><span class="line">round_date(datetime, &quot;week&quot;) </span><br><span class="line">ceiling_date(datetime, &quot;week&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 设置日期时间中的成分</span><br><span class="line">datetime &lt;- ymd_hms(&quot;2023-05-15 03:04:05&quot;) </span><br><span class="line">year(datetime) &lt;- 2020 </span><br><span class="line">month(datetime) &lt;- 01 </span><br><span class="line">hour(datetime) &lt;- hour(datetime) + 1</span><br><span class="line">datetime</span><br><span class="line">update(datetime, year = 2020, month = 2, mday = 2, hour = 2) # 同步设置</span><br></pre></td></tr></table></figure>
+
+<h2 id="时间间隔"><a href="#时间间隔" class="headerlink" title="时间间隔"></a>时间间隔</h2><p>• <strong>时期</strong>：以秒为单位表示一段精确的时间。<br>• <strong>阶段</strong>：表示由人工定义的一段时间，如几周或几个月。<br>• <strong>区间</strong>：表示从起点到终点的一段时间。\</p>
+<figure class="highlight plaintext"><figcaption><span>echo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::include_graphics(&quot;R数据科学笔记_insertimage_14.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 时期</span><br><span class="line">dseconds(15) </span><br><span class="line">dminutes(10) </span><br><span class="line">dhours(c(12, 24)) </span><br><span class="line">ddays(0:5) </span><br><span class="line">dweeks(3) </span><br><span class="line">dyears(1) </span><br><span class="line"># 时期的计算</span><br><span class="line">dyears(1) + dweeks(12) + dhours(15) </span><br><span class="line">2 * dyears(1) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 阶段</span><br><span class="line">seconds(15) </span><br><span class="line">minutes(10) </span><br><span class="line">hours(c(12, 24)) </span><br><span class="line">days(7) </span><br><span class="line">months(1:6) </span><br><span class="line">weeks(3) </span><br><span class="line">years(1) </span><br><span class="line"># 阶段的计算</span><br><span class="line">10 * (months(6) + days(1))</span><br><span class="line">days(50) + hours(25) + minutes(2) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 区间</span><br><span class="line">next_year &lt;- today() + years(1) </span><br><span class="line">(today() %--% next_year) / ddays(1) </span><br><span class="line"># 一个区间有多少时段</span><br><span class="line">(today() %--% next_year) %/% days(1) </span><br></pre></td></tr></table></figure>
+
+<h2 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Sys.timezone() # 查看时区</span><br><span class="line"></span><br><span class="line"># 设置时区</span><br><span class="line">(x1 &lt;- ymd_hms(&quot;2015-06-01 12:00:00&quot;, tz = &quot;America/New_York&quot;)) </span><br><span class="line">(x2 &lt;- ymd_hms(&quot;2015-06-01 18:00:00&quot;, tz = &quot;Europe/Copenhagen&quot;)) </span><br><span class="line">(x3 &lt;- ymd_hms(&quot;2015-06-02 04:00:00&quot;, tz = &quot;Pacific/Auckland&quot;)) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x4 &lt;- c(x1, x2, x3) </span><br><span class="line"># 保持时间不变，修改其显示方式</span><br><span class="line">x4a &lt;- with_tz(x4, tzone = &quot;Australia/Lord_Howe&quot;) </span><br><span class="line">x4a </span><br><span class="line">x4a - x4 </span><br><span class="line"># 修改内部时间。</span><br><span class="line">x4b &lt;- force_tz(x4, tzone = &quot;Australia/Lord_Howe&quot;) </span><br><span class="line">x4b </span><br><span class="line">x4b - x4 </span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" data-id="cldzqik390001r4vc7idbdgf2" data-title="R数据科学笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/02/11/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">R数据科学笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
